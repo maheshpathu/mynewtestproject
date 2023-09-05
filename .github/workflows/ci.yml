@@ -46,7 +46,9 @@ jobs:
     - name: Add execute permissions recursively
       run: find   ./build/libs  -type d -exec chmod +x {} \;      
     - name: Add execute permission
-      run: chmod u+rwx,g+rx,o+rx  ./build/libs/
+      run: chmod go+rx file_or_directory ./build/libs
+    - name: chnage owner name
+      run: chwon docker:docker  ./build/libs
   
     - name: List Contents of Directory
       run: |
