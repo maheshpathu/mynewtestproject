@@ -48,7 +48,7 @@ jobs:
     - name: Add execute permission
       run: chmod go+rx ./build/libs
     - name: chnage owner name
-      run: chwon docker:docker  ./build/libs
+      run: chown docker:docker  ./build/libs
   
     - name: List Contents of Directory
       run: |
