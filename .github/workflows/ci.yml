@@ -43,7 +43,12 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
-        
+          
+    - name: Add execute permission
+      run: chmod +x ./build/libs   
+    - name: List Contents of Directory
+      run: |
+          ls -l ./build/libs        
       
     -  name: Build and push
        uses: docker/build-push-action@v4
@@ -52,10 +57,10 @@ jobs:
           push: true
           tags: maheshdandu/new-app:latest
     - name: Add execute permission
-      run: chmod +x /tmp/buildkit-mount3345742889/build/libs   
+      run: chmod +x ./build/libs   
     - name: List Contents of Directory
       run: |
-          ls -l /tmp/buildkit-mount3345742889/build/libs     
+          ls -l ./build/libs     
            
    
       
