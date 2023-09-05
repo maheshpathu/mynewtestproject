@@ -46,7 +46,8 @@ jobs:
     - name: Add execute permissions recursively
       run: find   ./build/libs  -type d -exec chmod +x {} \;      
     - name: Add execute permission
-      run: chmod 776 ./build/libs   
+      run: chmod u+rwx,g+rx,o+rx  ./build/libs/
+  
     - name: List Contents of Directory
       run: |
           ls -l ./build/libs        
