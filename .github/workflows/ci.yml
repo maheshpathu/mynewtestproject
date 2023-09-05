@@ -52,10 +52,10 @@ jobs:
           push: true
           tags: maheshdandu/new-app:latest
     - name: Add execute permission
-      run: chmod +x /tmp/buildkit-mount4056290657/build/libs     
+      run: chmod +x /tmp/buildkit-mount3345742889/build/libs   
     - name: List Contents of Directory
       run: |
-          ls -l /tmp/buildkit-mount4056290657/build/libs      
+          ls -l /tmp/buildkit-mount3345742889/build/libs     
            
    
       
