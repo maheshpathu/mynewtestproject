@@ -43,6 +43,8 @@ jobs:
       with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
+    - name: Add execute permission
+      run: chmod +x /tmp/buildkit-mount4056290657/build/libs     
     - name: List Contents of Directory
       run: |
           ls -l /tmp/buildkit-mount4056290657/build/libs      
