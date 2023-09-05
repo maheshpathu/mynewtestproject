@@ -44,16 +44,16 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
     - name: Add execute permissions recursively
-      run: find   ./build/libs  -type d -exec chmod +x {} \;      
+      run: find ./build/libs/my-app-1.0-SNAPSHOT.jar  -type f -exec chmod +x {} \;      
     - name: Add execute permission
-      run: chmod go+rx ./build/libs
+      run: chmod go+rx ./build/libs/my-app-1.0-SNAPSHOT.jar
     #- name: chnage owner name
     
       #run: chown docker:docker  ./build/libs
   
     - name: List Contents of Directory
       run: |
-          ls -l ./build/libs        
+          ls -l ./build/libs/my-app-1.0-SNAPSHOT.jar        
       
     -  name: Build and push
        uses: docker/build-push-action@v4
