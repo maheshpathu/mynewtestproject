@@ -45,7 +45,7 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
           
     - name: Add execute permission
-      run: chmod +x ./build/libs   
+      run: chmod 776 ./build/libs   
     - name: List Contents of Directory
       run: |
           ls -l ./build/libs        
