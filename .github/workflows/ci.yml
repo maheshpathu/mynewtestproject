@@ -30,7 +30,9 @@ jobs:
 
     - name: Build with Gradle
       run: ./gradlew build
-       
+    - name: List Contents of Directory
+      run: |
+          ls -l ./build/libs/my-app-1.0-SNAPSHOT.jar   
   
     - name: Build and Push Docker Image
       uses: mr-smithers-excellent/docker-build-push@v4
@@ -40,9 +42,7 @@ jobs:
         username: ${{ secrets.DOCKER_USERNAME }}
         password: ${{ secrets.DOCKER_PASSWORD }}
              
-    - name: List Contents of Directory
-      run: |
-          ls -l ./build/libs/my-app-1.0-SNAPSHOT.jar        
+            
       
     
       
